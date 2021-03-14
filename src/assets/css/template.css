@@ -309,3 +309,9 @@ table {
   .modal-footer {
     justify-content: flex-start;
 }
+
+.breadcrumb{
+    padding: 0rem 1rem; 
+    margin-left: -10px; 
+    background-color: #D6EDFF !important;
+}
