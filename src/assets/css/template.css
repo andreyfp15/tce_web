@@ -315,3 +315,40 @@ table {
     margin-left: -10px; 
     background-color: #D6EDFF !important;
 }
+
+.flags {
+    width: 32px; 
+}
+
+.flags-1 {
+    margin-right: 7px;
+}
+
+.card-category {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 1rem;
+        -webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.25);
+        -moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.25);
+        box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.25);
+        font-family: 'Poppins';
+}
+
+.card-body-category {
+    padding: 1rem;
+}
+
+.card-category-text{
+    font-size: 20px;
+}
