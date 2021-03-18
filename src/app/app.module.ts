@@ -13,6 +13,7 @@ import { AdmTextComponent } from './adm-text/adm-text.component';
 import { AdmUserComponent } from './adm-user/adm-user.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
+import { TextModule } from './text/text.module';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CategoryComponent } from './category/category.component';
     FormsModule,
     NgbModule,
     BrowserAnimationsModule,
+    TextModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

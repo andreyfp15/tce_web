@@ -8,13 +8,15 @@ import { CategoryComponent } from './category/category.component'
 
 
 const routes: Routes = [
-  { path: '', component: CategoryComponent },
+  { path: '', loadChildren: () => import('./text/text.module').then(m => m.TextModule) },
+  //{ path: '', component: CategoryComponent },
   //{ path: 'login', component: LoginComponent },
   { path : 'admcategory', component: AdmCategoryComponent },
   { path : 'admtext', component: AdmTextComponent },
   { path : 'admuser', component : AdmUserComponent },
   { path : 'home', component : HomeComponent },
-  { path : 'category', component : CategoryComponent }
+  { path : 'category', component : CategoryComponent },
+  { path : 'text', loadChildren: () => import('./text/text.module').then(m => m.TextModule) },
 ];
 
 @NgModule({

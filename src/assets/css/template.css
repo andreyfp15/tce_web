@@ -352,3 +352,9 @@ table {
 .card-category-text{
     font-size: 20px;
 }
+
+.badge-card-texts {
+    margin-right: 20px; 
+    vertical-align: top; 
+    margin-top: 5px;
+}
