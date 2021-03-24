@@ -8,7 +8,7 @@ import { CategoryComponent } from './category/category.component'
 
 
 const routes: Routes = [
-  { path: '', loadChildren: () => import('./text/text.module').then(m => m.TextModule) },
+  { path: '', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
   //{ path: '', component: CategoryComponent },
   //{ path: 'login', component: LoginComponent },
   { path : 'admcategory', component: AdmCategoryComponent },
@@ -17,6 +17,7 @@ const routes: Routes = [
   { path : 'home', component : HomeComponent },
   { path : 'category', component : CategoryComponent },
   { path : 'text', loadChildren: () => import('./text/text.module').then(m => m.TextModule) },
+  { path : 'login', loadChildren: () => import('./login/login.module').then(m => m.LoginModule) },
 ];
 
 @NgModule({

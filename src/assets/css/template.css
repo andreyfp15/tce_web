@@ -316,8 +316,31 @@ table {
     background-color: #D6EDFF !important;
 }
 
+.logo-login {
+    width: 90px;
+}
+
+.title-login {
+    font-family: 'Poppins'; 
+    font-size: 32px; 
+    font-weight: bold;
+}
+
+.form-group-03{
+    margin-bottom: 0.3rem;
+}
+
+.btn-facebook {
+    background-color: #385499; 
+    color: #ffffff;
+}
+
 .flags {
     width: 32px; 
+}
+
+.flags-login {
+    width: 44px; 
 }
 
 .flags-1 {

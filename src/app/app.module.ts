@@ -14,6 +14,7 @@ import { AdmUserComponent } from './adm-user/adm-user.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
 import { TextModule } from './text/text.module';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { TextModule } from './text/text.module';
     NgbModule,
     BrowserAnimationsModule,
     TextModule,
+    LoginModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
