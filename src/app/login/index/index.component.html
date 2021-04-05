@@ -17,12 +17,17 @@
                 <img src="../../assets/img/brazil-flag.png" alt="Brazil flag" class="flags-login" />
             </div>
 
-            <form>
+            <form [formGroup]="formLogin" (ngSubmit)="onSubmit()">
                 <div class="form-group-03">
-                    <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                    <input type="email" class="form-control" formControlName="email" placeholder="Email" [ngClass]="{'is-invalid': submitted && formLogin.get('email').invalid }">
+                    <div class="invalid-feedback" *ngIf="submitted && formLogin.get('email').invalid">
+                        <span *ngIf="formLogin.get('email').errors.required">O campo login é obrigatório.</span>
+                        <span *ngIf="formLogin.get('email').errors.email">O campo login deve conter um email válido.</span>
+                    </div>
                 </div>
                 <div class="form-group-03">
-                    <input type="password" class="form-control" id="txtPassword" placeholder="Password">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Password" [ngClass]="{'is-invalid': submitted && formLogin.get('password').invalid }">
+                    <div class="invalid-feedback">O campo senha é obrigatório.</div>
                 </div>
                 <button type="submit" class="btn btn-block btn-primary">Login</button>
                 <button type="button" class="btn btn-link float-right" disabled>Esqueci minha senha</button>

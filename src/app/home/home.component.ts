@@ -20,7 +20,8 @@ export class HomeComponent implements OnInit {
     }
 
     if(page == "LOGOUT"){
-
+      this.router.navigateByUrl('/');
+      return;
     }
 
     this.router.navigateByUrl(page);

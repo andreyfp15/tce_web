@@ -8,7 +8,7 @@ import { UiSwitchModule } from 'ngx-toggle-switch';
 
 const routes: Routes = [
 
-  { path: '', component: DetailsComponent },
+  { path: '', component: IndexComponent },
   { path: 'index', component: IndexComponent },
   { path: 'details', component: DetailsComponent },
 ];
