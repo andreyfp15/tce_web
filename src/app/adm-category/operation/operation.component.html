@@ -1,0 +1,65 @@
+<div class="container">
+    <form [formGroup]="formOperation" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12 pl-2 pr-3 pt-3">
+                <div class="col-md-12">
+                    <h2 class="header">
+                        <span>Categoria</span>
+                        <a class="ml-5 link-a" title="Editar categoria" (click)="editCategory()" *ngIf="typeOperation == 2"><i class="fas fa-edit"></i></a>
+                        <span class="float-right" *ngIf="typeOperation != 1">N° 789</span>
+                    </h2>
+                </div>
+                <div class="col-md-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a routerLink="/home">Início</a></li>
+                            <li class="breadcrumb-item"><a routerLink="/index" >Lista de categorias</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <span *ngIf="typeOperation == 1">Cadastrar categoria</span>
+                                <span *ngIf="typeOperation == 2">Detalhes da categoria</span>
+                                <span *ngIf="typeOperation == 3">Editar categoria</span>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 pl-2 pr-2">
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">Filtros</div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-8">
+                                    <label for="txtModalName">Nome</label>
+                                    <input type="text" class="form-control" id="txtModalName" formControlName="name" [readonly]="typeOperation == 2" [ngClass]="{'is-invalid': submitted && formOperation.get('name').invalid }">
+                                    <div class="invalid-feedback" *ngIf="submitted && formOperation.get('name').invalid">
+                                        <span *ngIf="formOperation.get('name').errors.required">O campo Nome é obrigatório.</span>
+                                        <span *ngIf="formOperation.get('name').errors.maxlength">O campo Nome deve conter no maximo 50 caracteres.</span>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="checkbox" id="chkActive" formControlName="active" [disabled]="typeOperation == 2">
+                                        <label class="form-check-label" for="chkActive">Ativo</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 pt-4 pb-3">
+                    <button type="submit" class="btn btn-success mr-2" *ngIf="typeOperation == 1">Cadastrar categoria</button>
+                    <button type="submit" class="btn btn-success mr-2" *ngIf="typeOperation == 3">Alterar categoria</button>
+                    <a routerLink="/index" class="btn btn-dark">Voltar</a>
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+</div>
