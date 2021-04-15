@@ -15,10 +15,6 @@ export class HomeComponent implements OnInit {
 
   navegate(page : string){
 
-    if(page == "MODALUSER"){
-      
-    }
-
     if(page == "LOGOUT"){
       this.router.navigateByUrl('/');
       return;

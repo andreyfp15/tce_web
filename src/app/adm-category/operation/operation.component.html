@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a routerLink="/home">Início</a></li>
-                            <li class="breadcrumb-item"><a routerLink="/index" >Lista de categorias</a></li>
+                            <li class="breadcrumb-item"><a routerLink="/create" >Lista de categorias</a></li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 <span *ngIf="typeOperation == 1">Cadastrar categoria</span>
                                 <span *ngIf="typeOperation == 2">Detalhes da categoria</span>
@@ -55,7 +55,7 @@
                 <div class="col-md-12 pt-4 pb-3">
                     <button type="submit" class="btn btn-success mr-2" *ngIf="typeOperation == 1">Cadastrar categoria</button>
                     <button type="submit" class="btn btn-success mr-2" *ngIf="typeOperation == 3">Alterar categoria</button>
-                    <a routerLink="/index" class="btn btn-dark">Voltar</a>
+                    <a routerLink="/admcategory/index" class="btn btn-dark">Voltar</a>
                 </div>
 
             </div>

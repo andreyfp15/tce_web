@@ -31,15 +31,18 @@ export class OperationComponent implements OnInit {
     else if (this.router.url.indexOf('details')){
       this.typeOperation = 2;
       this.formOperation = this.formBuilder.group({
-        email : [null, [Validators.email, Validators.required, Validators.maxLength(200)]],
-        isAdmin : false,
-        active : false
+        email : [{value: null, disabled: true}, [Validators.email, Validators.required, Validators.maxLength(200)]],
+        isAdmin : {value: false, disabled: true},
+        active : {value: false, disabled: true}
       });
     }
   }
 
   editUser(){
     this.typeOperation = 3;
+    this.formOperation.controls['email'].enable();
+    this.formOperation.controls['isAdmin'].enable();
+    this.formOperation.controls['active'].enable();
   }
 
   openModalPassword(modalPassword: any) {

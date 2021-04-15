@@ -15,7 +15,7 @@
             <div class="col-md-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Início</a></li>
+                        <li class="breadcrumb-item"><a routerLink="/home">Início</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Categorias</li>
                     </ol>
                 </nav>
@@ -27,7 +27,7 @@
 
         <div class="col-md-12 pl-2 pr-2">
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-3" (click)="selectCategory()">
                 <div class="card-category">
                     <div class="card-body-category">
                         <span class="card-category-text">Básico</span>

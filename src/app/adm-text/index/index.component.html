@@ -1,18 +1,19 @@
 <div class="container">
 
     <div class="row">
+
         <div class="col-md-12 pl-2 pr-3 pt-3">
             <div class="col-md-12">
                 <h2 class="header">
-                    <span>Categoria</span>
-                    <a [routerLink]="['create']" class="pl-5" title="Adicionar categoria"><i class="fas fa-file-medical"></i></a>
+                    <span>Texto</span>
+                    <a [routerLink]="['/create']" class="pl-5" title="Adicionar texto"><i class="fas fa-file-medical"></i></a>
                 </h2>
             </div>
             <div class="col-md-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a routerLink="/home">Início</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Lista de categoria</li>
+                        <li class="breadcrumb-item active" aria-current="page">Lista de textos</li>
                     </ol>
                 </nav>
             </div>
@@ -20,6 +21,7 @@
     </div>
 
     <div class="row">
+
         <div class="col-md-12 pl-2 pr-2">
 
             <form [formGroup]="formFilter" (ngSubmit)="onSubmit()">
@@ -27,7 +29,7 @@
                     <div class="card">
                         <div class="card-header">Filtros</div>
                         <div class="card-body">
-
+    
                             <div class="row">
                                 <div class="form-group col-md-2">
                                     <label for="txtId">Id</label>
@@ -36,6 +38,21 @@
                                 <div class="form-group col-md-4">
                                     <label for="txtName">Nome</label>
                                     <input type="text" class="form-control" id="txtName" formControlName="name">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="slctLevel">Nível</label>
+                                    <select class="form-control" id="slctLevel" formControlName="level">
+                                        <option value="">Todos</option>
+                                        <option value="">Básico</option>
+                                        <option value="">Intermediário</option>
+                                        <option value="">Avançado</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="slcCategory">Categoria</label>
+                                    <select class="form-control" id="slcCategory" formControlName="idCategory">
+                                        <option value="0">Todos</option>
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-2">
                                     <label for="slctActive">Ativo</label>
@@ -49,6 +66,7 @@
                                     <button type="submit" class="btn btn-success">Buscar</button>
                                 </div>
                             </div>
+    
                         </div>
                     </div>
                 </div>
@@ -56,7 +74,7 @@
 
             <div class="col-md-12 pt-3">
                 <div class="card">
-                    <div class="card-header">Lista de categorias</div>
+                    <div class="card-header">Lista de textos</div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover table-sm">
                             <thead>
@@ -64,7 +82,8 @@
                                     <th>#</th>
                                     <th>Id</th>
                                     <th>Nome</th>
-                                    <th>Qtd.Textos</th>
+                                    <th>Nível</th>
+                                    <th>Categoria</th>
                                     <th>Ativo</th>
                                 </tr>
                             </thead>
@@ -72,28 +91,31 @@
                                 <tr class="text-center">
                                     <td>1</td>
                                     <td><a [routerLink]="['/details', 1]">1</a></td>
-                                    <td class="text-left">Basico</td>
-                                    <td>100</td>
+                                    <td class="text-left">Jenna almost got late </td>
+                                    <td>Básico</td>
+                                    <td>Básico</td>
                                     <td><span class="badge badge-success">Sim</span></td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>2</td>
                                     <td><a [routerLink]="['/details', 1]">1</a></td>
-                                    <td class="text-left">Intermediário</td>
-                                    <td>100</td>
+                                    <td class="text-left">A good dish </td>
+                                    <td>Básico</td>
+                                    <td>Básico</td>
                                     <td><span class="badge badge-success">Sim</span></td>
                                 </tr>
                                 <tr class="text-center">
                                     <td>3</td>
                                     <td><a [routerLink]="['/details', 1]">1</a></td>
-                                    <td class="text-left">Teste</td>
-                                    <td>100</td>
+                                    <td class="text-left">A good dish </td>
+                                    <td>Básico</td>
+                                    <td>Básico</td>
                                     <td><span class="badge badge-danger">Não</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="card-footer">Num. Registros encontrados: 4</div>
+                    <div class="card-footer">Num. Registros encontrados: 3</div>
                 </div>
             </div>
 
@@ -104,4 +126,5 @@
         </div>
 
     </div>
+
 </div>

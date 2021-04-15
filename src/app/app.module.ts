@@ -8,7 +8,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { AdmTextComponent } from './adm-text/adm-text.component';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
 import { TextModule } from './text/text.module';
@@ -18,7 +17,6 @@ import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
     AppComponent,
-    AdmTextComponent,
     HomeComponent,
     CategoryComponent
   ],

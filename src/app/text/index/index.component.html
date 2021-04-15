@@ -15,8 +15,8 @@
             <div class="col-md-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Início</a></li>
-                        <li class="breadcrumb-item"><a href="#">Categorias</a></li>
+                        <li class="breadcrumb-item"><a routerLink="/home">Início</a></li>
+                        <li class="breadcrumb-item"><a routerLink="/category">Categorias</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Básico</li>
                     </ol>
                 </nav>
@@ -28,21 +28,20 @@
 
         <div class="col-md-12 pl-2 pr-2">
 
-            <div class="col-md-12 mb-3">
+            <div class="col-md-12 mb-3" >
                 <div class="card-category">
                     <div class="card-body-category">
-                        <span class="card-category-text">1 - Jenna almost got late </span>
+                        <span class="card-category-text" (click)="selectText()">1 - Jenna almost got late </span>
                         <span class="float-right" >
                             <span class="badge badge-primary badge-card-texts">Básico</span>
                             <span style="margin-top: 5px;"><ui-switch [(ngModel)]="testUiSwitch" size="small"></ui-switch></span>
                         </span>
-
                     </div>
                 </div>
             </div>
 
             <div class="col-md-12 pt-4 pb-3">
-                <a routerLink="/home" class="btn btn-dark">Voltar</a>
+                <a routerLink="/category" class="btn btn-dark">Voltar</a>
             </div>
 
         </div>
