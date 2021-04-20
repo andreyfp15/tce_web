@@ -7,7 +7,7 @@ import { IndexComponent } from './index/index.component';
 import { OperationComponent } from './operation/operation.component';
 
 const routes: Routes = [
-  { path: '', component: OperationComponent },
+  { path: '', component: IndexComponent },
   { path: 'index', component: IndexComponent },
   { path: 'create', component: OperationComponent },
   { path: 'details/:id', component: OperationComponent },

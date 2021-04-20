@@ -13,7 +13,7 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a routerLink="/home">Início</a></li>
-                            <li class="breadcrumb-item"><a routerLink="/index" >Lista de textos</a></li>
+                            <li class="breadcrumb-item"><a routerLink="/admtext/index" >Lista de textos</a></li>
                             <li class="breadcrumb-item active" aria-current="page">
                                 <span *ngIf="typeOperation == 1">Cadastrar texto</span>
                                 <span *ngIf="typeOperation == 2">Detalhes da texto</span>
@@ -62,14 +62,21 @@
                                         <span *ngIf="formOperation.get('idCategory').errors.required">O campo Categoria é obrigatório.</span>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-4 mt-2">
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="chkActive" formControlName="active" [disabled]="typeOperation == 2">
+                                        <input class="form-check-input" type="checkbox" id="chkActive" formControlName="active">
                                         <label class="form-check-label" for="chkActive">Ativo</label>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-12">
+                                <div class="form-group col-md-8 mt-1">
                                     <input type="file" (change)="onFileChange($event)" formControlName="file" />
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="txtContent">Texto</label>
+                                    <textarea class="form-control" rows="15" id="txtContent" formControlName="content" [ngClass]="{'is-invalid': submitted && formOperation.get('content').invalid }"></textarea>
+                                    <div class="invalid-feedback" *ngIf="submitted && formOperation.get('content').invalid">
+                                        <span *ngIf="formOperation.get('content').errors.required">O campo Texto é obrigatório.</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -79,7 +86,7 @@
                 <div class="col-md-12 pt-4 pb-3">
                     <button type="submit" class="btn btn-success mr-2" *ngIf="typeOperation == 1">Cadastrar texto</button>
                     <button type="submit" class="btn btn-success mr-2" *ngIf="typeOperation == 3">Alterar texto</button>
-                    <a routerLink="/index" class="btn btn-dark">Voltar</a>
+                    <a routerLink="/admtext/index" class="btn btn-dark">Voltar</a>
                 </div>
 
             </div>

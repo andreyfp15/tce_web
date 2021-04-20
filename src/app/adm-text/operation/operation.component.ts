@@ -22,6 +22,7 @@ export class OperationComponent implements OnInit {
       level : [{value: "", disabled: true}, [Validators.required]],
       idCategory : [{value: "", disabled: true}, [Validators.required]],
       active : [{value: false, disabled: true}],
+      content : [{value: "", disabled: true}, [Validators.required]],
       file : [{value: "", disabled: true}],
     });
 
@@ -30,6 +31,7 @@ export class OperationComponent implements OnInit {
       this.formOperation.controls['level'].enable();
       this.formOperation.controls['idCategory'].enable();
       this.formOperation.controls['active'].enable();
+      this.formOperation.controls['content'].enable();
       this.formOperation.controls['file'].enable();
     }
     else if (this.router.url.indexOf('details')){
@@ -43,6 +45,7 @@ export class OperationComponent implements OnInit {
     this.formOperation.controls['level'].enable();
     this.formOperation.controls['idCategory'].enable();
     this.formOperation.controls['active'].enable();
+    this.formOperation.controls['content'].enable();
     this.formOperation.controls['file'].enable();
   }
 
