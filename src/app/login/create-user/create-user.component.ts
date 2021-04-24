@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppValidators } from '../../app.validators';
 import { Helper } from '../../app.helper';
+import { LoginService } from '../login.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-user',
@@ -13,7 +16,7 @@ export class CreateUserComponent implements OnInit {
   formOperation : FormGroup;
   submitted = false;
 
-  constructor(private formBuilder : FormBuilder) { }
+  constructor(private formBuilder : FormBuilder, private service : LoginService, private router : Router, private toast: ToastrService) { }
 
   ngOnInit() {
     this.formOperation = this.formBuilder.group({
@@ -24,14 +27,17 @@ export class CreateUserComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.submitted = true;
     if(this.formOperation.valid){
       Helper.showLoader();
-      Helper.hideLoader();
-      //this.router.navigateByUrl('home');
-      alert('d');
-
+      this.service.createUser(this.formOperation.value).subscribe(data => {
+        this.toast.success('Usuário cadastrado com sucesso.', 'Sucesso!');
+        this.router.navigateByUrl('/');
+        Helper.hideLoader();
+      }, error => {
+        Helper.hideLoader();
+        this.toast.error('Erro ao salvar usuário. ' + error.message, 'Erro!');
+      });
     }
     
   }
