@@ -15,15 +15,29 @@
                 <img src="../../assets/img/brazil-flag.png" alt="Brazil flag" class="flags-login" />
             </div>
 
-            <form>
+            <form [formGroup]="formOperation" (ngSubmit)="onSubmit()">
                 <div class="form-group-03">
-                    <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                    <input type="email" class="form-control" id="txtEmail" placeholder="Email" formControlName="email" [ngClass]="{'is-invalid': submitted && formOperation.get('email').invalid }"/>
+                    <div class="invalid-feedback" *ngIf="submitted && formOperation.get('email').invalid">
+                        <span *ngIf="formOperation.get('email').errors.required">O campo email é obrigatório.</span>
+                        <span *ngIf="formOperation.get('email').errors.email">O campo email deve conter um email válido.</span>
+                        <span *ngIf="formOperation.get('email').errors.maxlength">O campo email deve conter no maximo 100 caracteres.</span>
+                    </div>
                 </div>
                 <div class="form-group-03">
-                    <input type="password" class="form-control" id="txtPassword" placeholder="Senha">
+                    <input type="password" class="form-control" id="txtPassword" placeholder="Senha" formControlName="password" [ngClass]="{'is-invalid': submitted && formOperation.get('password').invalid }">
+                    <div class="invalid-feedback" *ngIf="submitted && formOperation.get('password').invalid">
+                        <span *ngIf="formOperation.get('password').errors.required">O campo senha é obrigatório.</span>
+                        <span *ngIf="formOperation.get('password').errors.maxlength">O campo senha deve conter na maximo 20 caracteres.</span>
+                    </div>
                 </div>
                 <div class="form-group-03">
-                    <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirmar senha">
+                    <input type="password" class="form-control" id="txtConfirmPassword" placeholder="Confirmar senha" formControlName="passwordConfirm" [ngClass]="{'is-invalid': submitted && formOperation.get('passwordConfirm').invalid }">
+                    <div class="invalid-feedback" *ngIf="submitted && formOperation.get('passwordConfirm').invalid">
+                        <span *ngIf="formOperation.get('passwordConfirm').errors.required">O campo confirmar senha é obrigatório.</span>
+                        <span *ngIf="formOperation.get('passwordConfirm').errors.maxlength">O campo confirmar senha deve conter na maximo 20 caracteres.</span>
+                        <span *ngIf="formOperation.get('passwordConfirm').errors.confirmedValidator">Os campos "Senha" e "Confirmar senha" devem ser iguais.</span>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-block btn-success">Salvar</button>
             </form>

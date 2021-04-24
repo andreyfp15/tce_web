@@ -21,9 +21,9 @@ export class OperationComponent implements OnInit {
     if (this.router.url === '/' || this.router.url === '/create'){
       this.typeOperation = 1;
       this.formOperation = this.formBuilder.group({
-        email : [null, [Validators.email, Validators.required, Validators.maxLength(200)]],
-        password : [null, [Validators.required, Validators.maxLength(50)]],
-        passwordConfirm: [null, [Validators.required, Validators.maxLength(50)]],
+        email : [null, [Validators.email, Validators.required, Validators.maxLength(100)]],
+        password : [null, [Validators.required, Validators.maxLength(20)]],
+        passwordConfirm: [null, [Validators.required, Validators.maxLength(20)]],
         isAdmin : false,
         active : false
       }, { validator: AppValidators.ConfirmedValidator('password', 'passwordConfirm')});
